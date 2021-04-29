@@ -36,7 +36,14 @@ public class LinkedList_Stephen {
         sss.removeAt(5);
         System.out.println("-------------------------------------------");
         for(int i =0; i < sss.size(); i++){
-            System.out.println("this is the order " + sss.getAt(i).data);
+            System.out.println("this is the order " + sss.getAt(i).data + " INDEX " + i);
+        }
+
+        sss.insertAt(1,8888888);
+
+        System.out.println("-------------------------------------------");
+        for(int i =0; i < sss.size(); i++){
+            System.out.println("this is the order " + sss.getAt(i).data + " INDEX " + i);
         }
 
     }
@@ -162,5 +169,27 @@ public class LinkedList_Stephen {
         }
 
         prev.nextNode = curNode.nextNode;
+    }
+
+    public void insertAt(int index, int data){
+        StephenNode newNode = new StephenNode(data);
+        if(index == 0 && this.head == null){
+            this.head = newNode;
+            return;
+        }
+        if(index == 0){
+            this.insertFirst(data);
+            return;
+        }
+        if(index > this.size()-1){
+            this.insertLast(data);
+            return;
+        }
+
+        StephenNode nodeBefore = this.getAt(index-1);
+        StephenNode nodeMiddle = nodeBefore.nextNode;
+        nodeBefore.nextNode = newNode;
+        newNode.nextNode = nodeMiddle;
+
     }
 }
