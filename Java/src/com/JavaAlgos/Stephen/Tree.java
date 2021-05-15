@@ -28,6 +28,8 @@ public class Tree {
         Tree.BreathFirstTraverse(newTree);
         System.out.println("-------------------------------------------");
         Tree.DepthFirstTraverse(newTree);
+        System.out.println("-------------------------------------------");
+        var stuff = Tree.GetLevelWidth(newTree);
     }
 
     TreeNode root;
@@ -53,6 +55,31 @@ public class Tree {
         BFTHelper(nodes);
     }
 
+    public static ArrayList<Integer> GetLevelWidth(Tree input){
+        ArrayList<TreeNode> nodes = new ArrayList<TreeNode>();
+        ArrayList<Integer> widths = new ArrayList<Integer>();
+        nodes.add(input.root);
+        nodes.add(new TreeNode("Marker"));
+        return GetLevelWidthHelper(nodes,widths,0);
+    }
+
+    public static ArrayList<Integer> GetLevelWidthHelper(ArrayList<TreeNode> nodes,ArrayList<Integer> widths, int count){
+        // Putting A on top was making it return too early
+        TreeNode curNode = nodes.remove(0);
+        System.out.println(curNode.data);
+        if(curNode.data.equals("Marker")){
+            nodes.add(new TreeNode("Marker"));
+            widths.add(count);
+            count = 0;
+            if(nodes.size() == 1 && nodes.get(0).data.equals("Marker") ) return widths; // A
+            return GetLevelWidthHelper(nodes,widths,count);
+        }
+        count++;
+        for(int i =0; i < curNode.children.size(); i++){
+            nodes.add(curNode.children.get(i));
+        }
+        return GetLevelWidthHelper(nodes,widths,count);
+    }
 
     public static void DepthFirstTraverse(Tree input){
         ArrayList<TreeNode> nodes = new ArrayList<TreeNode>();
