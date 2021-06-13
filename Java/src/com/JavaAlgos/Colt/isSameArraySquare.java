@@ -10,6 +10,7 @@ public class isSameArraySquare {
     * has it's corresponding value squared in the second array.
     * The frequency fo values must be the same
     *
+    * Frequency Counter Problem
     * */
     public static void main(String[] args){
         System.out.println(same(new int[]{1,2,3}, new int[]{4,1,9}));

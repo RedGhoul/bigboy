@@ -1,6 +1,13 @@
 package com.JavaAlgos.Colt;
 
 public class countUniqueValues {
+    /*
+    * Implement a function "countUniqueValues" which accepts a sorted array,
+    * and counts the unique values in the array. There can be negative numbers in the array
+    * but it will always be sorted
+    *
+    * Multiple Pointers Method
+    * */
     public static void main(String[] args){
         System.out.println(countUniqueValues(new int[] {1,2,3,4,4,4,7,7,12,12,13}));
         System.out.println(countUniqueValues(new int[] {1,1,1,1,1,1,2}));
@@ -11,6 +18,7 @@ public class countUniqueValues {
         System.out.println(countUniqueValues2(new int[] {1,1,1,1,1,1,2}));
         System.out.println(countUniqueValues2(new int[] {-2,-1,-1,0,1}));
         System.out.println(countUniqueValues2(new int[] {1,1,1,1,1,1}));
+        System.out.println(countUniqueValues2(new int[] {1,1,2,3,3,4,5,6,6,7}));
     }
 
     public static int countUniqueValues2(int[] arrayIn){
