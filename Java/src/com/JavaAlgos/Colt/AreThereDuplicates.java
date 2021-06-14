@@ -7,7 +7,16 @@ public class AreThereDuplicates {
         System.out.println(aretherduplicates(new int[]{1,3,24,2,4}));
     }
 
-
+    /*
+    * The other way of doing this would have been to use the "double pointer" method
+    * However that would make the time complexity O(n*Log(n)) since you would have
+    * to sort the array before using the double pointer method.
+    * This would also give you space complexity of O(n)
+    *
+    * The solution below will give you a better time complexity of O(n)
+    *
+    * You could have also used the "set" data structure as well to solve the problem
+    * */
     public static boolean aretherduplicates(int[] arrays){
         if(arrays.length == 0)return false;
         HashMap<Integer,Integer> hashmapbag = new HashMap<>();
