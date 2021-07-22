@@ -18,6 +18,8 @@ public class BFS_DFS {
         left1.right = right2;
         System.out.println(Arrays.toString(BFS(root).toArray()));
         System.out.println(Arrays.toString(DFS_PreOrder(root).toArray()));
+        System.out.println(Arrays.toString(DFS_PostOrder(root).toArray()));
+        System.out.println(Arrays.toString(DFS_InOrder(root).toArray()));
     }
 
     // the iterative approach
@@ -59,6 +61,46 @@ public class BFS_DFS {
         if(node.right != null){
             DFS_PreOrderHelper(finalArr,node.right);
         }
+    }
+
+    // the type of DFS really depends on where you put the add method in the helper function
+    public static ArrayList<Integer> DFS_PostOrder(BSTNode input){
+        if(input == null) return null;
+        ArrayList<Integer> finalArr = new ArrayList<>();
+        DFS_PostOrderHelper(finalArr,input);
+        return finalArr;
+    }
+
+    public static void DFS_PostOrderHelper(ArrayList<Integer> finalArr, BSTNode node){
+
+        if(node.left != null){
+            DFS_PostOrderHelper(finalArr,node.left);
+        }
+
+        if(node.right != null){
+            DFS_PostOrderHelper(finalArr,node.right);
+        }
+        finalArr.add(node.value);
+    }
+
+    // the type of DFS really depends on where you put the add method in the helper function
+    public static ArrayList<Integer> DFS_InOrder(BSTNode input){
+        if(input == null) return null;
+        ArrayList<Integer> finalArr = new ArrayList<>();
+        DFS_InOrderHelper(finalArr,input);
+        return finalArr;
+    }
+
+    public static void DFS_InOrderHelper(ArrayList<Integer> finalArr, BSTNode node){
+
+        if(node.left != null){
+            DFS_InOrderHelper(finalArr,node.left);
+        }
+        finalArr.add(node.value);
+        if(node.right != null){
+            DFS_InOrderHelper(finalArr,node.right);
+        }
+
     }
 
 }
