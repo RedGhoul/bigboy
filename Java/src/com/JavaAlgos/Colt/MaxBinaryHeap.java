@@ -67,7 +67,7 @@ public class MaxBinaryHeap {
         if(curIndex == 0) return;
         int parentIndex = getParent(curIndex);
         int parentValue = values.get(parentIndex);
-        int initialValue = values.get(curIndex);
+        int initialValue = values.get(0);
         while(initialValue > parentValue){
             swap(curIndex, parentIndex,values);
             curIndex = parentIndex;
