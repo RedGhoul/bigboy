@@ -27,4 +27,27 @@ public class HashTable {
         hpArray.add(new HashPair(key,value));
 
     }
+
+    public HashPair get(String key) {
+        if(key == null) return null;
+        int index = HashFunc(key,100);
+        ArrayList<HashPair> hpArray = this.array.get(index);
+        if(hpArray.stream().anyMatch(c -> c.key == key)){
+            int indexV = find(key,hpArray);
+            if(indexV != 0){
+                return  hpArray.get(indexV);
+            }
+        }
+        return null;
+    }
+
+    private int find(String key, ArrayList<HashPair> hpArray){
+        for(int i = 0; i < hpArray.size(); i++){
+            if(hpArray.get(i).key == key){
+                return i;
+            }
+        }
+        return 0;
+    }
+    // get values or keys method results in a double for loop
 }
