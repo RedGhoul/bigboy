@@ -34,4 +34,34 @@ public class Graph {
             vertexBList.add(vertexA);
         }
     }
+
+    public void removeEdge(String vertexA, String vertexB){
+        if(!this.AJList.containsKey(vertexA) || !this.AJList.containsKey(vertexB)){
+            return;
+        }
+        List<String> vertexAList = this.AJList.get(vertexA);
+        if(vertexAList.contains(vertexB)){
+            vertexAList.remove(vertexB);
+        }
+
+        List<String> vertexBList = this.AJList.get(vertexB);
+        if(vertexBList.contains(vertexA)){
+            vertexBList.remove(vertexA);
+        }
+    }
+
+    public void removeVertex(String vertexA){
+        if(!this.AJList.containsKey(vertexA)){
+            return;
+        }
+
+        this.AJList.remove(vertexA);
+
+        for(Map.Entry<String, ArrayList<String>> entry : this.AJList.entrySet()){
+            if(entry.getValue().contains(vertexA)){
+                entry.getValue().remove(vertexA);
+            }
+        }
+
+    }
 }
