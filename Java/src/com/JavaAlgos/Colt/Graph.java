@@ -2,7 +2,7 @@ package com.JavaAlgos.Colt;
 import java.util.*;
 
 public class Graph {
-    private HashMap<String,ArrayList<String>> AJList;
+    public HashMap<String,ArrayList<String>> AJList;
     public Graph(){
         AJList = new HashMap<>();
     }
