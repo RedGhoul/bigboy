@@ -23,6 +23,8 @@ public class GraphDFS_BFS {
         g.addEdge("E","F");
 
         System.out.println(Arrays.toString(DFS_R("A",g).toArray()));
+        System.out.println(Arrays.toString(DFS_Iterative("A",g).toArray()));
+        System.out.println(Arrays.toString(BFS_Iterative("A",g).toArray()));
     }
 
     public static ArrayList<String> DFS_R(String Vertex, Graph g){
@@ -43,5 +45,47 @@ public class GraphDFS_BFS {
             }
         }
         //return;
+    }
+
+    public static ArrayList<String> DFS_Iterative(String vertex, Graph g){
+        HashMap<String,Boolean> seenList = new HashMap<>();
+        ArrayList<String> Stack = new ArrayList<>();
+        Stack.add(vertex);
+        seenList.put(vertex,true);
+        ArrayList<String> Result = new ArrayList<>();
+        while(Stack.size() >0){
+            String curVertex = Stack.remove(Stack.size()-1);
+            Result.add(curVertex);
+
+            ArrayList<String> childNodes = g.AJList.get(curVertex);
+            for (String node: childNodes) {
+                if(!seenList.containsKey(node)){
+                    seenList.put(node,true); // if you don't do this then its children are going to be added twice
+                    Stack.add(node);
+                }
+            }
+        }
+        return Result;
+    }
+
+    public static ArrayList<String> BFS_Iterative(String vertex, Graph g){
+        HashMap<String,Boolean> seenList = new HashMap<>();
+        ArrayList<String> Stack = new ArrayList<>();
+        Stack.add(vertex);
+        seenList.put(vertex,true);
+        ArrayList<String> Result = new ArrayList<>();
+        while(Stack.size() >0){
+            String curVertex = Stack.remove(0);
+            Result.add(curVertex);
+
+            ArrayList<String> childNodes = g.AJList.get(curVertex);
+            for (String node: childNodes) {
+                if(!seenList.containsKey(node)){
+                    seenList.put(node,true); // if you don't do this then its children are going to be added twice
+                    Stack.add(node);
+                }
+            }
+        }
+        return Result;
     }
 }
