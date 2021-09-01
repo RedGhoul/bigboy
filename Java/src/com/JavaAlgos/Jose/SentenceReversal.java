@@ -7,6 +7,8 @@ public class SentenceReversal {
      * Convert string to char array. Then use the double pointer method to swap.
      * Nope that won't work since if you did that everything would be backwards
      *
+     * Can also convert string to string array using split
+     *
      * You have swap word by word.
      *
      * So you would have to break the sentence word by word then add it together
