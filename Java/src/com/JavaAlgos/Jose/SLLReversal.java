@@ -1,6 +1,6 @@
 package com.JavaAlgos.Jose;
 
-public class LLReversal {
+public class SLLReversal {
     /**
      * Reverse a linked list pretty classic interview problem
      * Draw it out if you have to
