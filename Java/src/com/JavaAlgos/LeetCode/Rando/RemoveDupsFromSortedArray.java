@@ -1,4 +1,4 @@
-package com.JavaAlgos.LeetCodeRando;
+package com.JavaAlgos.LeetCode.Rando;
 /*
 * LEET CODE EASY - 26 - Remove Duplicates from Sorted Array
 *

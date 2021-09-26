@@ -1,4 +1,4 @@
-package com.JavaAlgos.LeetCodeRando;
+package com.JavaAlgos.LeetCode.Rando;
 
 import java.util.Arrays;
 import java.util.HashMap;
