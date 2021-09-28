@@ -37,17 +37,20 @@ public class ValidParentheses {
          1 <= s.length <= 104
          s consists of parentheses only '()[]{}'. <-- important
 
-        Problem Key: Just use a stack
+        Problem Key:
+        Just use a stack
+        Keep adding things till you see the closing brace type
         You can do it in a single loop
 
+
         Mistake:
-     Forgot to treat the stack like a stack. Once things are taken off the stack
-     They should be gone for good. Should have used "Remove" instead of "Get" on ArrayList
+         Forgot to treat the stack like a stack. Once things are taken off the stack
+         They should be gone for good. Should have used "Remove" instead of "Get" on ArrayList
 
-     Follow your instincts, you should have checked the length of the string. If its only one
-     then you should have returned a false
+         Follow your instincts, you should have checked the length of the string. If its only one
+         then you should have returned a false
 
-     Only when the stack is empty should I ever return true
+         Only when the stack is empty should I ever return true
      **/
     public static void main(String[] args){
         System.out.println(isValid("()"));

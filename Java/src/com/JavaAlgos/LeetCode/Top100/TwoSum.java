@@ -23,6 +23,11 @@ public class TwoSum {
         Input: nums = [3,3], target = 6
         Output: [0,1]
 
+        - Problem Key
+        use hashmap
+        key = target - current val
+        value = current val index
+
         - Mistake
         First time failed due to me using ABS.
         It should always be target - current value, even if its negative
