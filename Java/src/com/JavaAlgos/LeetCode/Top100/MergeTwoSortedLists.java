@@ -36,6 +36,9 @@ public class MergeTwoSortedLists {
      * - Not taking my "IF" statements seriously
      * aka not paying enough attention to them
      *
+     *
+     * Could have also done this using the existing node chains,
+     * instead of forming a new for the whole process,
      * */
     public static void main(String[] args){
         Test1();
