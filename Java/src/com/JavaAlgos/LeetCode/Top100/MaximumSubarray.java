@@ -35,7 +35,7 @@ public class MaximumSubarray {
      * Things that could be improved:
      * - Look through your code as much as possible before running
      *
-     * Things that learned:
+     * Things that I learned:
      * The solution isn't always complex, be careful not to over complicate things
      *
      *

@@ -55,6 +55,11 @@ public class ClimbingStairs {
      * So you either have to use memoization or use a DP or Iterative approach
      *
      * Properly name your variables so you don't confuse your self
+     *
+     *
+     * Pattern:
+     * If you got some sort of permutations vibes its most likely
+     * a DP / Recursive problem
      * **/
 
     public static void main(String[] args){
@@ -62,6 +67,7 @@ public class ClimbingStairs {
     }
 
     // this is right but it actually fails
+    // if you want to do this way your gonna need to use memoization
     public int climbStairsV1(int n) {
         if(n <= 0) return 0;
         if(n == 1) return 1;
