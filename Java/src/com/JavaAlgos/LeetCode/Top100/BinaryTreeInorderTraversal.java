@@ -17,7 +17,7 @@ this.right = right;
 }
 }
 public class BinaryTreeInorderTraversal {
-    /*
+    /**
     Given the root of a binary tree, return the inorder traversal of its nodes' values.
 
     Example 1:
@@ -74,7 +74,7 @@ public class BinaryTreeInorderTraversal {
     in the problem, it's gonna most likely involve recursion
 
 
-     */
+    **/
 
 
     public static void main(String[] args){
