@@ -42,7 +42,11 @@ public class SymmetricTree {
      * PATTERN
      * Trees == Mostly likely a recursive question
      *
-     * Could solve this iteratively - need to look into it
+     *
+     *
+     *      * Homework:
+     *      * Look at the way other people did this same problem.
+     *      * Solutions either used less memory OR used an iterative approach
      * **/
 
     public static void main(String[] args){
