@@ -55,14 +55,18 @@ public class IntersectionofTwoLinkedLists {
      *
      * I just want to know if there is a intersection
      *
-     * think it all the way through before you write code
+     * Problem Key
+     * traversing two linked lists and storing the answer in something
+     * doesn't always have to be a hashmap
      *
+     * When you compare two lists you may have to reverse them
      *
-     0
-     [1,3,5,7,9,11,13,15,17,19,21]
-     [2]
-     11
-     1
+     * Things I learned
+     * always draw out what you are trying to do if you can.
+     *
+     * Pattern
+     * While loop for going through a tree
+     * Storing stuff and comparing while going through a linked list
      * **/
     public static void main(String[] args){
 
