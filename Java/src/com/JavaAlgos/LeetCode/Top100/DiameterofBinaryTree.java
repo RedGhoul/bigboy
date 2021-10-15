@@ -46,12 +46,15 @@ public class DiameterofBinaryTree {
      * pass through the root node.
      *
      * You basically need to calculate the length from either side of the node
-     * your currently at. So it more of a side to side thing then a top down thing
+     * your currently at. So it more of a side to side thing then a top down
+     *
+     * You are really just trying to figure out how much stuff you have
+     * on either side of where you are in tree
      *
      * // this down here was also wrong
-     * Its just the longest path wins aka MAX depth
+     * It is just the longest path wins aka MAX depth
      * So you were on the right track, but just made it more complex
-     * then it needed to be
+     * than it needed to be
      * **/
     public static void main(String[] args){
 
