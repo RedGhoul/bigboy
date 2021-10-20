@@ -1,6 +1,4 @@
-package com.JavaAlgos.LeetCode.Top100;
-
-import com.JavaAlgos.Stephen.Tree;
+package com.JavaAlgos.LeetCode.Top100.Easy;
 
 public class MergeTwoBinaryTrees {
     /**

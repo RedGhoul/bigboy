@@ -1,4 +1,4 @@
-package com.JavaAlgos.LeetCode.Top100;
+package com.JavaAlgos.LeetCode.Top100.Medium;
 
 public class BestTimetoBuyandSellStockII {
     /**

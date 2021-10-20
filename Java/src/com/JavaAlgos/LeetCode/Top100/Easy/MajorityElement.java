@@ -1,4 +1,4 @@
-package com.JavaAlgos.LeetCode.Top100;
+package com.JavaAlgos.LeetCode.Top100.Easy;
 
 import java.util.HashMap;
 import java.util.Map;

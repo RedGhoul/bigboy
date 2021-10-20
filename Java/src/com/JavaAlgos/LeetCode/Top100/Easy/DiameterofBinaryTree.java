@@ -1,8 +1,4 @@
-package com.JavaAlgos.LeetCode.Top100;
-
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+package com.JavaAlgos.LeetCode.Top100.Easy;
 
 public class DiameterofBinaryTree {
 

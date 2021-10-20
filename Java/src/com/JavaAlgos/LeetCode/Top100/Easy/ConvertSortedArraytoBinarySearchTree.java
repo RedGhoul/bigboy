@@ -1,7 +1,5 @@
-package com.JavaAlgos.LeetCode.Top100;
+package com.JavaAlgos.LeetCode.Top100.Easy;
 
-
-import com.JavaAlgos.Stephen.Tree;
 
 public class ConvertSortedArraytoBinarySearchTree {
     /**

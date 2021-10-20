@@ -1,6 +1,4 @@
-package com.JavaAlgos.LeetCode.Top100;
-
-import java.util.List;
+package com.JavaAlgos.LeetCode.Top100.Easy;
 
 public class ReverseLinkedList {
     /**
