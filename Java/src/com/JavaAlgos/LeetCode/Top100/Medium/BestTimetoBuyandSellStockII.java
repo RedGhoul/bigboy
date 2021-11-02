@@ -33,6 +33,12 @@ public class BestTimetoBuyandSellStockII {
      *
      * What I am thinking :
      * This is a type of two pointer problem
+     *
+     * The basic idea of this:
+     * It's asking for the max profit over a period of time
+     * It's not going to be a massive single transaction
+     * Keep computing the thing you are trying to find <----- main hurstic
+     * Your trying to get even the smallest profit possible, so that your profits can accumulate
      * **/
     public static void main(String[] args){
 

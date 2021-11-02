@@ -29,6 +29,29 @@ public class BestTimetoBuyandSellStock {
      *
      * 1 <= prices.length <= 105
      * 0 <= prices[i] <= 104
+     *
+     * Things to remember:
+     * Most of these simple sounding array problems can be solved in a single pass
+     * All you ever need to do is some stuff in a for loop
+     * This is going forward in time, can never backtrack, so your mins always have to exist
+     * before your maxs
+     *
+     * My thinking:
+     * You have to find the min, then subtract it from the max. BUT in a single pass !!!
+     *
+     * You're really trying to find the max profit. How do I do that ?
+     * if you're not looking for min, then you look for a max profit
+     *
+     * Assume the first variable is our min. Compare to the next number, is it less than ?
+     * If it is then it becomes your new min
+     * If it isn't then it means it greater than min, calculate the profit and store it,
+     * if it is greater than the last profit your had
+     *
+     * This is about finding the single biggest transaction.
+     *
+     * Basic Big Idea.
+     * Your moving forward in them. Doesn't necessarily need to be lowest or highest in the array.
+     * Compute the thing you are trying to find multiple times.
      * **/
     public static void main(String[] args){
 //        System.out.println(maxProfit(new int[]{7,1,5,3,6,4}));
