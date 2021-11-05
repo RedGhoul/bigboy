@@ -96,6 +96,9 @@ public class AddTwoNumbers {
          }else{
          p3.next = new ListNode(sumValue % 10);
 
+         What I learned:
+         You can get what number is where using this sort of system
+         By using division and the modulo operator
          var ones = Math.floor(num % 10),
          tens = Math.floor(num/10 % 10),
          hundreds = Math.floor(num/100 % 10),
@@ -107,7 +110,12 @@ public class AddTwoNumbers {
          hundredMillions = Math.floor(num / 100000000 % 10);
          }
 
+         What could have done better:
+         - Go deeper in your play through of different values through the program
+         - Missed a few main cases that cause the program to error out
 
+         What I did well:
+         You actually did 95% of this code, without the help of a code editor
          **/
         int carryOver = 0;
         ListNode p3 = null;
