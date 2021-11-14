@@ -116,6 +116,8 @@ public class AddTwoNumbers {
 
          What I did well:
          You actually did 95% of this code, without the help of a code editor
+
+         Could I solve this ? Got 95% of the way there
          **/
         int carryOver = 0;
         ListNode p3 = null;

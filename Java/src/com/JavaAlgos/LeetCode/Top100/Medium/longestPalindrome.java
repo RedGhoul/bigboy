@@ -33,6 +33,7 @@ public class longestPalindrome {
      * but also from the inside out. So you can treat ever value in the string as a center,
      * and try to expand out. And try to find the biggest palindromic substring that way.
      *
+     * Could I solve this ? No way had to look at leetcode discuss posts
      * **/
 
     //weird hybrid approach of stuff I saw online and in the leetcode solution

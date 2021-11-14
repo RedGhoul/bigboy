@@ -50,6 +50,8 @@ public class RotateArray {
      * 1) reverse the array
      * 2) reverse the center to the end
      * 3) reverse the start to the center
+     *
+     * Could I solve this ? No - the approach was out of left field for me
      * **/
 
     public void rotate(int[] nums, int k) {

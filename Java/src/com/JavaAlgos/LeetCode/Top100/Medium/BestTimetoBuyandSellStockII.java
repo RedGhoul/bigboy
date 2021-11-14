@@ -39,6 +39,8 @@ public class BestTimetoBuyandSellStockII {
      * It's not going to be a massive single transaction
      * Keep computing the thing you are trying to find <----- main hurstic
      * Your trying to get even the smallest profit possible, so that your profits can accumulate
+     *
+     * Could I solve this ? Got 95% of the way there - fumbled around
      * **/
     public static void main(String[] args){
 

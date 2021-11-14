@@ -37,6 +37,8 @@ public class RemoveNthNodeFromEndofList {
      * Don't forget your semi colons
      * Try a ton of cases before submission
      * Try middle cases as well and work through your logic
+     *
+     * Could I solve this ? Got to a solution, had to run it through some test cases, and modify it
      * */
     public ListNode removeNthFromEnd(ListNode head, int n) {
         /*

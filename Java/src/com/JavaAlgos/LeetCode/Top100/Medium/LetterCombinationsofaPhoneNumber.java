@@ -81,6 +81,8 @@ public class LetterCombinationsofaPhoneNumber {
      * Well you are finding all the combinations by going down a path
      * THEN going back (aka BACKTRACKING) then repeating the same thing
      * down another path. TO do an exhaustive search
+     *
+     * Could I solve this ? no way had to look at youtube video
      * **/
 
     public static List<String> letterCombinations(String digits) {

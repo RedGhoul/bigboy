@@ -64,6 +64,9 @@ public class GenerateParentheses {
      *
      * time complexity is number of valid combos * depth of the tree (n)
      * space is o(n)
+     *
+     * Could I solve this ? no way, this was more out of left field for me again
+     * Had to look at youtube video
      * **/
 
 

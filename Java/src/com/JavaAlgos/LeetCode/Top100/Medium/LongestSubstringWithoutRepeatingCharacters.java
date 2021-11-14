@@ -1,5 +1,8 @@
 package com.JavaAlgos.LeetCode.Top100.Medium;
-import java.util.*;
+
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Set;
 
 public class LongestSubstringWithoutRepeatingCharacters {
     /**
@@ -68,7 +71,7 @@ public class LongestSubstringWithoutRepeatingCharacters {
      Could have realized the massive runtime flaw and worked up a new solution, that was more space efficient.
      Instead, tried to make a bad solution better
 
-
+     Could I solve this ? Yes and no, didn't get to the optimal solution
 
      **/
     public static void main(String[] args){

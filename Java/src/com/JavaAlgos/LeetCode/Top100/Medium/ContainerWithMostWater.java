@@ -28,6 +28,7 @@ public class ContainerWithMostWater {
      * In this case it was that last one. We know we want bigger heights, so after computing the inital
      * area, move the pointer that is pointing to the smallest height between the two
      *
+     * Could I solve this ? Had to use one of the hints
      * **/
 
     public int maxArea(int[] height) {
