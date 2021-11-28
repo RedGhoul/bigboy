@@ -1,0 +1,22 @@
+Tool Belt
+
+Max Heaps | Min Heaps
+Space O(n)
+Time to insert O(log(n))
+Time to get min / max O(1)
+Time to remove top node O(log(n))
+Time to search arbitrarly O(n)
+And can also be used as a priority queue
+
+Where this is used:
+When ever you hear find: "Kth largest element" or "Kth min something something"
+You know that its where the heap comes to the rescue
+
+for "Kth largest" you need to use a Min Heap. Why a min heap ? That is cause your trying to find
+the "Kth largest" meaning it needs to be in low to high order, to the get the "Kth" position.
+So now all you have to do is add the elements into the heap.
+Then pull K elements off the min heap, and the kth element you pull off will be the Kth largest
+
+Vice versa for "Finding the Kth minimum" using a Max heap.
+
+Seen on page 152
