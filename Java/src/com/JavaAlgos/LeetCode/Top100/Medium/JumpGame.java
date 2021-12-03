@@ -30,6 +30,19 @@ public class JumpGame {
      * just need to return true if we can reach the end of the array
      * I think we could have some dfs action over here
      * recursive as well
+     * NVM this is wrong lol - you made this wayyyy to complex
+     *
+     *
+     * REALLY SIMPLE
+     *
+     * What is the max distance I can travel from this index ?
+     *
+     * If the place on the array your at is bigger then the
+     * max distance you could ever travel then you will never reach the end
+     *
+     * If I am on the 407, and the max range I can get with any gass tank at 1KM internvals
+     * is less then the distance I am already at, then I could never get here with those gas tanks
+
      */
 
     public static void main(String[] args) {
@@ -40,6 +53,15 @@ public class JumpGame {
     }
 
     public static boolean canJump(int[] nums) {
+        int max = 0;
+        for (int i = 0; i < nums.length; i++) {
+            if (i > max) return false;
+            max = Math.max(max, nums[i] + i);
+        }
+        return true;
+    }
+
+    public static boolean canJump2(int[] nums) {
         return canJumpHelper(0, 1, nums);
     }
 
@@ -48,6 +70,7 @@ public class JumpGame {
 
         for (int i = start; i <= end; i++) {
             int curVal = nums[i];
+            if (curVal == 0 && i == start) return false;
             if (curVal == 0) continue;
             int newEnd = i + curVal;
             if (canJumpHelper(i + 1, newEnd, nums) == true) {

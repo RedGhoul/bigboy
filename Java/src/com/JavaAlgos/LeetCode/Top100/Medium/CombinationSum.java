@@ -1,5 +1,6 @@
 package com.JavaAlgos.LeetCode.Top100.Medium;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class CombinationSum {
@@ -59,12 +60,41 @@ public class CombinationSum {
      * 1 add some stuff to bag
      * 2 recursive call to do some stuff on that bag
      * 3 remove what you added to that bag in step 2
+     *
+     *
+     * christ all mighty fml
      **/
     public static void main(String[] args) {
-
+        combinationSum(new int[]{2, 7, 6, 3, 5, 1}, 9);
     }
 
-    public List<List<Integer>> combinationSum(int[] candidates, int target) {
-        return null;
+    public static List<List<Integer>> combinationSum(int[] candidates, int target) {
+        List<List<Integer>> finalAnswers = new ArrayList<>();
+        List<Integer> curGroup = new ArrayList<>();
+        combinationSumHelper(finalAnswers, curGroup, candidates, target, 0);
+        return finalAnswers;
+    }
+
+    public static void combinationSumHelper(List<List<Integer>> finalAnswers, List<Integer> curGroup, int[] candidates, int target, int start) {
+        if (target == 0) {
+            finalAnswers.add(new ArrayList<>(curGroup));
+            return;
+        }
+
+        for (int i = start; i < candidates.length; i++) {
+            int tempVal = target - candidates[i];
+            if (tempVal >= 0) {
+                curGroup.add(candidates[i]);
+                combinationSumHelper(finalAnswers, curGroup, candidates, tempVal, i);
+                /**
+                 * You put the "i" in there because you don't want any more repeated values than necessary
+                 *
+                 * I already did everything with a 2 (i = 0) so I'm going to keep starting with a 3 (i = 1) this time
+                 * when i do the recurstion down, this is why I don't get anymore dup arrays in the final array
+                 * **/
+
+                curGroup.remove(curGroup.size() - 1);
+            }
+        }
     }
 }
