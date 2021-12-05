@@ -1,0 +1,12 @@
+2021-12-04
+- FindingBoundaryWithBinarySearch
+- First Element Not Smaller Than Target / Find Smallest Letter Greater Than Target
+Algo monster has this problem:
+First Element Not Smaller Than Target
+Your basically looking for the left boundary
+
+The leet code version is called:
+Find Smallest Letter Greater Than Target
+Your basically looking for the right boundary
+
+Today I learned that binary search can be used for a lot of stuff

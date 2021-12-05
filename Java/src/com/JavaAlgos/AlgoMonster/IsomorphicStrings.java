@@ -38,6 +38,11 @@ public class IsomorphicStrings {
      * Your building two indepent strings that count the number of times something appears
      * OR
      * - in what the chars are pointing to - use arrays as ordered hashmaps - and use chars are the keys
+     *
+     * KEY:
+     * make another two strings that record the current number
+     * of times that a character has been seen,
+     * then check if they are equal
      **/
 
     public static String genUKString(String s) {
