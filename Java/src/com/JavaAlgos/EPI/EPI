@@ -20,3 +20,8 @@ Then pull K elements off the min heap, and the kth element you pull off will be 
 Vice versa for "Finding the Kth minimum" using a Max heap.
 
 Seen on page 152
+
+
+Min Heap: PriorityQueue minHeap= new PriorityQueue<>();
+
+Max Heap: PriorityQueue maxHeap= new PriorityQueue<>(Comparator.reverseOrder());
