@@ -6,8 +6,9 @@ public class SmallestWindowContainingSubstring {
     /**
      * n = length of str
      * m = length of pattern
-     * Time O(n)
+     * Time O(n + m) cause one loop after the other of diff sizes
      * Space O(m)
+     * because we create a brand-new hash map of size m in the beginning
      **/
     public static void main(String[] args) {
         System.out.println(findSubstring("aabdec", "abc"));
