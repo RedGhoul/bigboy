@@ -1,8 +1,9 @@
 package com.JavaAlgos.Colt;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
+import com.JavaAlgos.LeetCode.Top100.Medium.GroupAnagrams;
+import com.JavaAlgos.LeetCode.Top100.Medium.QuadrupleSumToTarget;
+
+import java.util.*;
 
 public class GraphDFS_BFS {
     public static void main(String[] args){
@@ -22,70 +23,82 @@ public class GraphDFS_BFS {
         g.addEdge("D","F");
         g.addEdge("E","F");
 
-        System.out.println(Arrays.toString(DFS_R("A",g).toArray()));
-        System.out.println(Arrays.toString(DFS_Iterative("A",g).toArray()));
-        System.out.println(Arrays.toString(BFS_Iterative("A",g).toArray()));
+       // System.out.println(Arrays.toString(DFS_R("A",g).toArray()));
+       System.out.println(Arrays.toString(DFS_Iterative("A",g).toArray()));
+       System.out.println(Arrays.toString(BFS_Iterative("A",g).toArray()));
     }
 
-    public static ArrayList<String> DFS_R(String Vertex, Graph g){
-        ArrayList<String> resultsList = new ArrayList<>();
-        HashMap<String,Boolean> Seen = new HashMap<>();
-        DFS_R_Helper(g,Vertex,resultsList,Seen);
-        return resultsList;
+    /**
+     * Same thing we always thought
+     * First come, first served, first child of the current node.
+     * Aka keep going deep as possible, till you can't anymore
+     *
+     * In this case it lends its self well to Recursion
+     *
+     * I am guessing in the interative approcae for DFS we keep adding more things infornt
+     * Aka use a stack, if not allowed to use recursion
+     * **/
+    public static List<String> DFS_R(String Node, Graph g){
+        List<String> output = new ArrayList<>();
+        HashMap<String, Boolean> bag = new HashMap<>();
+        output.add(Node);
+        bag.put(Node,true);
+        Re_Helper(Node, g, output,bag);
+        return output;
     }
 
-    public static void DFS_R_Helper(Graph g,String Vertex,ArrayList<String> resultsList,HashMap<String,Boolean> Seen ){
-        ArrayList<String> curNs = g.AJList.get(Vertex);
-        if(curNs.size() == 0) return;
-        resultsList.add(Vertex);
-        Seen.put(Vertex, true);
-        for(String value : curNs){
-            if (!Seen.containsKey(value)){
-                DFS_R_Helper(g,value,resultsList,Seen);
+    public static void Re_Helper(String curNode, Graph g, List<String> output, HashMap<String,Boolean> bag){
+        List<String> Childern = g.AJList.get(curNode);
+
+        for(String child : Childern){
+            if(!bag.containsKey(child)){
+                bag.put(child,true);
+                output.add(child);
+                Re_Helper(child,g,output, bag);
             }
         }
-        //return;
     }
 
-    public static ArrayList<String> DFS_Iterative(String vertex, Graph g){
-        HashMap<String,Boolean> seenList = new HashMap<>();
-        ArrayList<String> Stack = new ArrayList<>();
-        Stack.add(vertex);
-        seenList.put(vertex,true);
-        ArrayList<String> Result = new ArrayList<>();
-        while(Stack.size() >0){
-            String curVertex = Stack.remove(Stack.size()-1);
-            Result.add(curVertex);
-
-            ArrayList<String> childNodes = g.AJList.get(curVertex);
-            for (String node: childNodes) {
-                if(!seenList.containsKey(node)){
-                    seenList.put(node,true); // if you don't do this then its children are going to be added twice
-                    Stack.add(node);
+    public static List<String> DFS_Iterative(String Node, Graph g){
+        List<String> output = new ArrayList<>();
+        HashMap<String, Boolean> bag = new HashMap<>();
+        Stack<String> stack = new Stack<>();
+        stack.add(Node);
+        bag.put(Node, true);
+        while(!stack.isEmpty()){
+            String currentNode = stack.pop();
+            output.add(currentNode);
+            List<String> childern = g.AJList.get(currentNode);
+            for(int i = 0; i < childern.size(); i++){
+                String IterChild = childern.get(i);
+                if(!bag.containsKey(IterChild)){
+                    bag.put(IterChild,true);
+                    stack.add(IterChild);
                 }
             }
         }
-        return Result;
+        return output;
     }
 
-    public static ArrayList<String> BFS_Iterative(String vertex, Graph g){
-        HashMap<String,Boolean> seenList = new HashMap<>();
-        ArrayList<String> Stack = new ArrayList<>();
-        Stack.add(vertex);
-        seenList.put(vertex,true);
-        ArrayList<String> Result = new ArrayList<>();
-        while(Stack.size() >0){
-            String curVertex = Stack.remove(0);
-            Result.add(curVertex);
+    public static List<String> BFS_Iterative(String Node, Graph g){
+        List<String> output = new ArrayList<>();
+        HashMap<String,Boolean> hashMap = new HashMap<>();
+        hashMap.put(Node,true);
+        Queue<String> qq = new LinkedList<>();
+        qq.add(Node);
+        while(!qq.isEmpty()){
+            String currentNode = qq.poll();
+            output.add(currentNode);
 
-            ArrayList<String> childNodes = g.AJList.get(curVertex);
-            for (String node: childNodes) {
-                if(!seenList.containsKey(node)){
-                    seenList.put(node,true); // if you don't do this then its children are going to be added twice
-                    Stack.add(node);
+            List<String> childern = g.AJList.get(currentNode);
+            for(String node: childern){
+                if(!hashMap.containsKey(node)){
+                    hashMap.put(node, true);
+                    qq.add(node);
                 }
             }
         }
-        return Result;
+        return output;
     }
+
 }

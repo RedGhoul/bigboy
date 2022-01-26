@@ -1,0 +1,30 @@
+Pattern Fast Slow Pointers:
+
+Where one pointer moves twice as fast as the other.
+You can do the following:
+
+- You can find the middle of a linked list,
+using the two pointer fast slow method.
+
+- You can check if a linked list has a cycle.
+
+- You can apply fast slow pointers to a number of situations. Even if they
+aren't about linked lists. Like arrays or even the summation of numbers.
+It all boils down to one number / index / pointer moving slowly, and
+another moving twice as fast.
+
+- Some times you will have to reverse and un reverse a linked list.
+
+- These sorts of questions can be made up of smaller parts,
+that build up on each other.
+
+    Like we use fast slow pointers, and then use a
+    reverse linked list algo on the middle of the list.
+
+    Or keep counting with a single pointers to get the length
+    of the cycle if there is one.
+
+    Or do all the stuff above and find the start of the linked list cycle by
+    moving two pointers apart the distance of the length of cycle, and then
+    keep moving the two pointers one by one till they meet again. And then where
+    they meet is going to be where the cycle happens.
